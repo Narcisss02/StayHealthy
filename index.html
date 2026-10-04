@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>StayHealthy - Mockup</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <header class="app-header">
+        <h1>StayHealthy</h1>
+        <p>Gestionează-ți antrenamentele la sală și urmărește-ți progresul.</p>
+        <p class="app-count">3 antrenamente, dintre care 2 planificate</p>
+    </header>
+
+    <main class="container">
+        <section class="panel">
+            <h2>Adaugă antrenament</h2>
+            <form class="item-form">
+                <label>Titlu antrenament
+                    <input type="text" name="titlu" placeholder="Ex: Antrenament piept și triceps" />
+                </label>
+                <label>Dificultate
+                    <select name="eticheta">
+                        <option value="usor">Ușor</option>
+                        <option value="mediu">Mediu</option>
+                        <option value="intens">Intens</option>
+                    </select>
+                </label>
+                <button type="submit">Adaugă</button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>Antrenamentele mele</h2>
+            <!-- Când lista e goală: <p class="empty">Nu există niciun element.</p> -->
+            <ul class="item-list">
+                <li class="item-card">
+                    <div>
+                        <h3>Leg Day Workout</h3>
+                        <span class="badge badge-intens">Intens</span>
+                    </div>
+                    <span class="status">Planificat</span>
+                </li>
+                
+                <li class="item-card done">
+                    <div>
+                        <h3>Morning Run 5km</h3>
+                        <span class="badge badge-mediu">Mediu</span>
+                    </div>
+                    <span class="status">Finalizat</span>
+                </li>
+
+                <li class="item-card">
+                    <div>
+                        <h3>Yoga & Stretching</h3>
+                        <span class="badge badge-usor">Ușor</span>
+                    </div>
+                    <span class="status">Planificat</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        Proiect Tehnologii Web - StayHealthy
+    </footer>
+</body>
+</html>
