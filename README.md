@@ -47,10 +47,10 @@ For Stage 2, press F12 to open the Developer Tools and view the logic tests in t
 ## Stage 2 Checklist (To be filled after git push)
 | ID | Requirement | Where (permalink) | How to check |
 | --- | --- | --- | --- |
-| S2-R1 | JS file linked, logs on page load | index.html#L.. | open page, F12 |
-| S2-R2 | 3+ items with id, name, state, tag | antrenamente.js#L..-L.. | read |
-| S2-R3 | list, count, search, add, toggle, delete | antrenamente.js#L..-L.. | console output |
-| S2-R4 | add rejects empty name and invalid tag | antrenamente.js#L..-L.. | last 2 console lines |
-| S2-R5 | original array unchanged after add | antrenamente.js#L.. | console line |
-| S2-R6 | README Stage 2 section + AI log | README.md | read |
-| S2-R7 | commit "Stage 2" pushed | link to the commit | commit history |
+| S2-R1 | JS file linked, logs on page load | https://github.com/Narcisss02/StayHealthy/blob/40c3181c069fb823d3a618d415493e32454e8c0d/index.html#L67 | open page, F12 |
+| S2-R2 | 3+ items with id, name, state, tag | https://github.com/Narcisss02/StayHealthy/blob/40c3181c069fb823d3a618d415493e32454e8c0d/antrenamente.js#L1-L5 | read |
+| S2-R3 | list, count, search, add, toggle, delete | https://github.com/Narcisss02/StayHealthy/blob/40c3181c069fb823d3a618d415493e32454e8c0d/antrenamente.js#L9-L53 | console output |
+| S2-R4 | add rejects empty name and invalid tag | https://github.com/Narcisss02/StayHealthy/blob/40c3181c069fb823d3a618d415493e32454e8c0d/antrenamente.js#L28-L36 | last 2 console lines |
+| S2-R5 | original array unchanged after add | https://github.com/Narcisss02/StayHealthy/blob/40c3181c069fb823d3a618d415493e32454e8c0d/antrenamente.js#L64 | console line |
+| S2-R6 | README Stage 2 section + AI log | https://github.com/Narcisss02/StayHealthy/blob/40c3181c069fb823d3a618d415493e32454e8c0d/README.md?plain=1#L32 | read |
+| S2-R7 | commit "Stage 2" pushed | 40c3181c069fb823d3a618d415493e32454e8c0d | commit history |
