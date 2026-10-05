@@ -25,10 +25,12 @@ Details per stage:
 
 ## How to run
 Open `index.html` in a browser. No build step, no server.
+For Stage 2, press F12 to open the Developer Tools and view the logic tests in the Console.
 
 ## Status
 - [x] Stage 1: static mockup
-- [ ] Stage 2: data logic in JavaScript
+- [x] Stage 2: data logic in JavaScript
+- [ ] Stage 3: Vite and React project
 
 ## Stage 1 Checklist (To be filled after git push)
 | ID | Requirement | Where (permalink) | How to check |
@@ -41,3 +43,14 @@ Open `index.html` in a browser. No build step, no server.
 | S1-R6 | 2 columns on desktop, 1 under 700px | https://github.com/Narcisss02/StayHealthy/blob/a11efb51e3fbb65f9ad7a59d3a5282801a18aaa9/CSS/style.css#L169-L173 | resize < 700px |
 | S1-R7 | visible focus, readable dark theme | https://github.com/Narcisss02/StayHealthy/blob/a11efb51e3fbb65f9ad7a59d3a5282801a18aaa9/CSS/style.css#L163-L185 | Tab; dark mode |
 | S1-R8 | commit "Stage 1" pushed | c97e726ba6f963bfd833efe8704faef8e88d593e | commit history |
+
+## Stage 2 Checklist (To be filled after git push)
+| ID | Requirement | Where (permalink) | How to check |
+| --- | --- | --- | --- |
+| S2-R1 | JS file linked, logs on page load | index.html#L.. | open page, F12 |
+| S2-R2 | 3+ items with id, name, state, tag | antrenamente.js#L..-L.. | read |
+| S2-R3 | list, count, search, add, toggle, delete | antrenamente.js#L..-L.. | console output |
+| S2-R4 | add rejects empty name and invalid tag | antrenamente.js#L..-L.. | last 2 console lines |
+| S2-R5 | original array unchanged after add | antrenamente.js#L.. | console line |
+| S2-R6 | README Stage 2 section + AI log | README.md | read |
+| S2-R7 | commit "Stage 2" pushed | link to the commit | commit history |
