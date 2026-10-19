@@ -60,10 +60,10 @@ For Stage 2, press F12 to open the Developer Tools and view the logic tests in t
 
 | ID | Requirement | Where (permalink) | How to check |
 |---|---|---|---|
-| S3-R1 | npm run dev starts without errors | [frontend/package.json](link_aici) | npm install, npm run dev |
-| S3-R2 | app name and counter computed from data | [frontend/src/App.jsx#L..-L..](link_aici) | edit data, save |
-| S3-R3 | data from README, not from the example | [frontend/src/App.jsx#L..-L..](link_aici) | compare with README |
-| S3-R4 | stage 1 styles reused | [frontend/src/App.css](link_aici) | look at the page |
-| S3-R5 | node_modules ignored, build passes | [frontend/.gitignore](link_aici) | npm run build |
-| S3-R6 | README Stage 3 section + AI log | [README.md](link_aici), [ai-log/etapa-03.md](link_aici) | read |
-| S3-R7 | commit "Stage 3" pushed | [link_commit_aici](link_aici) | commit history |
+| S3-R1 | npm run dev starts without errors | https://github.com/Narcisss02/StayHealthy/blob/034147abdef8bb44bd49be36a687b6f1520abd1e/frontend/package.json | npm install, npm run dev |
+| S3-R2 | app name and counter computed from data | https://github.com/Narcisss02/StayHealthy/blob/034147abdef8bb44bd49be36a687b6f1520abd1e/frontend/src/App.jsx#L12-L20 | edit data, save |
+| S3-R3 | data from README, not from the example | https://github.com/Narcisss02/StayHealthy/blob/034147abdef8bb44bd49be36a687b6f1520abd1e/frontend/src/App.jsx#L3-L7 | compare with README |
+| S3-R4 | stage 1 styles reused | https://github.com/Narcisss02/StayHealthy/blob/034147abdef8bb44bd49be36a687b6f1520abd1e/frontend/src/App.css | look at the page |
+| S3-R5 | node_modules ignored, build passes | https://github.com/Narcisss02/StayHealthy/blob/034147abdef8bb44bd49be36a687b6f1520abd1e/frontend/.gitignore | npm run build |
+| S3-R6 | README Stage 3 section + AI log | https://github.com/Narcisss02/StayHealthy/blob/034147abdef8bb44bd49be36a687b6f1520abd1e/README.md#L59-L69 | read |
+| S3-R7 | commit "Stage 3" pushed | 4b929a838fd2ad5fa4fd2e456e128761bde45747 | commit history |
