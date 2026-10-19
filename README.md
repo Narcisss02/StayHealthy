@@ -22,6 +22,10 @@ Sample data used across all stages:
 
 Details per stage:
 * Stage 1: Used Gemini to generate the grid/flexbox layout, CSS variables for dark mode. See the `ai-log/` folder.
+* ## Stage 4: components
+The list is rendered from the data, through two components:
+`AntrenamentList` receives the whole array and renders one card per item.
+`AntrenamentCard` receives a single item through props and displays it.
 
 ## How to run
 Open `index.html` in a browser. No build step, no server.
@@ -31,7 +35,8 @@ For Stage 2, press F12 to open the Developer Tools and view the logic tests in t
 - [x] Stage 1: static mockup
 - [x] Stage 2: data logic in JavaScript
 - [x] Stage 3: Vite and React project
-- [ ] Stage 4: Components built from data
+- [x] Stage 4: components rendered from data
+- [ ] Stage 5: local state and events
 
 ## Stage 1 Checklist (To be filled after git push)
 | ID | Requirement | Where (permalink) | How to check |
@@ -67,3 +72,14 @@ For Stage 2, press F12 to open the Developer Tools and view the logic tests in t
 | S3-R5 | node_modules ignored, build passes | https://github.com/Narcisss02/StayHealthy/blob/034147abdef8bb44bd49be36a687b6f1520abd1e/frontend/.gitignore | npm run build |
 | S3-R6 | README Stage 3 section + AI log | https://github.com/Narcisss02/StayHealthy/blob/034147abdef8bb44bd49be36a687b6f1520abd1e/README.md#L59-L69 | read |
 | S3-R7 | commit "Stage 3" pushed | 4b929a838fd2ad5fa4fd2e456e128761bde45747 | commit history |
+
+## Stage 4 Checklist
+| ID | Requirement | Where (permalink) | How to check |
+| --- | --- | --- | --- |
+| S4-R1 | 2+ components in src/components/ | https://github.com/Narcisss02/StayHealthy/tree/main/frontend/src/components | open folder |
+| S4-R2 | card receives data through props | https://github.com/Narcisss02/StayHealthy/blob/7a6918915e3486cede5f71e59dea8ae6455083a2/frontend/src/components/AntrenamentCard.jsx#L3 | read |
+| S4-R3 | map + key={id}, no console warnings | https://github.com/Narcisss02/StayHealthy/blob/7a6918915e3486cede5f71e59dea8ae6455083a2/frontend/src/components/AntrenamentList.jsx#L10 | F12, Console |
+| S4-R4 | message for empty list | https://github.com/Narcisss02/StayHealthy/blob/7a6918915e3486cede5f71e59dea8ae6455083a2/frontend/src/components/AntrenamentList.jsx#L4 | set array to [] |
+| S4-R5 | state changes the card look | https://github.com/Narcisss02/StayHealthy/blob/7a6918915e3486cede5f71e59dea8ae6455083a2/frontend/src/components/AntrenamentCard.jsx#L5 | toggle a done flag |
+| S4-R6 | README Stage 4 section + AI log | https://github.com/Narcisss02/StayHealthy/blob/main/README.md | read |
+| S4-R7 | commit "Stage 4" pushed | https://github.com/Narcisss02/StayHealthy/commit/113bf8994407cf975a55da0fd2f3a7dfb8e3a265 | commit history |
