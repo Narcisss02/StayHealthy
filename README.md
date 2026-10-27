@@ -89,11 +89,13 @@ For Stage 2, press F12 to open the Developer Tools and view the logic tests in t
 ## Stage 5 Checklist
 | ID | Requirement | Where (permalink) | How to check |
 | --- | --- | --- | --- |
-| S5-R1 | list kept in useState, in App | [App.jsx#L17](link) | read |
-| S5-R2 | toggling changes state and card look | [App.jsx#L21-L25](link) | click a checkbox |
-| S5-R3 | delete removes the item | [App.jsx#L28-L30](link) | click Delete |
-| S5-R4 | header counter derived, not in state | [App.jsx#L39](link) | toggle, watch header |
-| S5-R5 | immutable updates (no push, splice) | [App.jsx#L22-L24](link) | read |
-| S5-R6 | light/dark toggle: state + data-theme | [App.jsx#L34-L36](link) | click the button |
-| S5-R7 | no console warnings; README + AI log | [README.md#L..](link) | F12, Console |
-| S5-R8 | commit "Stage 5" pushed | [link to the commit](link) | commit history |
+| S5-R1 | list kept in useState, in App | https://github.com/Narcisss02/StayHealthy/blob/f2c3854b4b4b1f704f4c63e5c80612b6ebd0dda5/frontend/src/App.jsx#L15 | read |
+| S5-R2 | toggling changes state and card look | https://github.com/Narcisss02/StayHealthy/blob/f2c3854b4b4b1f704f4c63e5c80612b6ebd0dda5/frontend/src/App.jsx#L18-L22
+https://github.com/Narcisss02/StayHealthy/blob/f2c3854b4b4b1f704f4c63e5c80612b6ebd0dda5/frontend/src/components/AntrenamentCard.jsx#L5 | click a checkbox |
+| S5-R3 | delete removes the item | https://github.com/Narcisss02/StayHealthy/blob/f2c3854b4b4b1f704f4c63e5c80612b6ebd0dda5/frontend/src/App.jsx#L24-L26 | click Delete |
+| S5-R4 | header counter derived, not in state | https://github.com/Narcisss02/StayHealthy/blob/f2c3854b4b4b1f704f4c63e5c80612b6ebd0dda5/frontend/src/App.jsx#L35 | toggle, watch header |
+| S5-R5 | immutable updates (no push, splice) | https://github.com/Narcisss02/StayHealthy/blob/f2c3854b4b4b1f704f4c63e5c80612b6ebd0dda5/frontend/src/App.jsx#L18-L26 | read |
+| S5-R6 | light/dark toggle: state + data-theme | https://github.com/Narcisss02/StayHealthy/blob/f2c3854b4b4b1f704f4c63e5c80612b6ebd0dda5/frontend/src/App.jsx#L28-L32
+https://github.com/Narcisss02/StayHealthy/blob/f2c3854b4b4b1f704f4c63e5c80612b6ebd0dda5/frontend/src/App.css#L32 | click the button |
+| S5-R7 | no console warnings; README + AI log | https://github.com/Narcisss02/StayHealthy/blob/f2c3854b4b4b1f704f4c63e5c80612b6ebd0dda5/README.md?plain=1#L89-L99 | F12, Console |
+| S5-R8 | commit "Stage 5" pushed | https://github.com/Narcisss02/StayHealthy/commit/6086469402465c5182ebe32e7ca9fb422d10ac14 | commit history |
