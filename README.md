@@ -115,12 +115,13 @@ The application has been completely revamped to feature a premium fitness club d
 - **Advanced UI/UX:** Cascading Fade-In animations, premium dark/light mode toggle, hover effects (`transform` & `transition`), and expandable exercise cards.
 - **Session Tracking:** Added a progress bar (range slider) for each workout and a form to add new sessions dynamically to the local state.
 
-## Custom Stage Checklist
+## Stage 6 Checklist
 | ID | Requirement | Where (permalink) | How to check |
 | --- | --- | --- | --- |
-| C-R1 | Multi-page navigation state | [App.jsx#L..](link) | Click tabs in the Navbar |
-| C-R2 | Add new session form | [App.jsx#L..](link) | Fill the form and click "Adaugă" |
-| C-R3 | Progress bar per session | [AntrenamentCard.jsx#L..](link) | Drag the slider, observe percentage |
-| C-R4 | Expandable exercise cards | [App.jsx#L..](link) | Click an exercise card to see details |
-| C-R5 | Rotating Coach quotes | [App.jsx#L..](link) | Wait 5 seconds to see the quote change |
-| C-R6 | Cascading entry animations | [App.css#L..](link) | Refresh or change pages to see elements slide in |
+| S6-R1 | npm run api starts, route shows JSON | https://github.com/Narcisss02/StayHealthy/blob/cfc0a4e1daf534b62c45c8421b30c7812493895b/frontend/package.json#L11 | open localhost:3001/antrenamente |
+| S6-R2 | data no longer in React code | https://github.com/Narcisss02/StayHealthy/blob/cfc0a4e1daf534b62c45c8421b30c7812493895b/frontend/src/App.jsx#L82-L90 | read |
+| S6-R3 | loading message while waiting | https://github.com/Narcisss02/StayHealthy/blob/cfc0a4e1daf534b62c45c8421b30c7812493895b/frontend/src/App.jsx#L238 | --delay 4000 |
+| S6-R4 | error message when API is down | https://github.com/Narcisss02/StayHealthy/blob/cfc0a4e1daf534b62c45c8421b30c7812493895b/frontend/src/App.jsx#L239 | stop npm run api, refresh |
+| S6-R5 | fetch only in api.js, URL from env | https://github.com/Narcisss02/StayHealthy/blob/cfc0a4e1daf534b62c45c8421b30c7812493895b/frontend/src/api.js#L4-L10 | search for fetch |
+| S6-R6 | README Stage 6 section + AI log | https://github.com/Narcisss02/StayHealthy/blob/cfc0a4e1daf534b62c45c8421b30c7812493895b/README.md?plain=1#L109-L126| read |
+| S6-R7 | commit "Stage 6" pushed | https://github.com/Narcisss02/StayHealthy/commit/81b7f296f5a3e27f291ab425ace4408df8e72193 | commit history |
