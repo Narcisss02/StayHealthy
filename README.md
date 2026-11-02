@@ -26,6 +26,12 @@ Details per stage:
 * **Stage 3:** Asked for explanations on initializing the Vite project, cleaning up boilerplate files safely, and understanding JSX syntax differences.
 * **Stage 4:** Used the AI to understand React component architecture, passing data via `props`, and rendering lists dynamically with `map()` and unique keys.
 * **Stage 5:** Discussed managing local state with `useState`, passing callback functions as props for inverse data flow, and dynamically toggling the global theme.
+* **Stage 6:** (Custom): Premium UI, State Navigation & Form Prep
+The application has been completely revamped to feature a premium fitness club design (StayFit theme). It now includes multi-page state navigation, dynamic motivational coaching, and advanced interactive UI components (hover animations, cascading page transitions). Form prep is included for adding sessions and tracking progress locally.
+
+```bash
+npm run api # terminal 1, http://localhost:3001
+npm run dev # terminal 2, http://localhost:5173
 
 
 ## How to run
@@ -38,7 +44,7 @@ For Stage 2, press F12 to open the Developer Tools and view the logic tests in t
 - [x] Stage 3: Vite and React project
 - [x] Stage 4: components rendered from data
 - [x] Stage 5: local state and events
-- [ ] Stage 6: loading data from a mock API
+- [x] Stage 6: loading data from a mock API
 
 ## Stage 1 Checklist (To be filled after git push)
 | ID | Requirement | Where (permalink) | How to check |
@@ -99,3 +105,22 @@ https://github.com/Narcisss02/StayHealthy/blob/f2c3854b4b4b1f704f4c63e5c80612b6e
 https://github.com/Narcisss02/StayHealthy/blob/f2c3854b4b4b1f704f4c63e5c80612b6ebd0dda5/frontend/src/App.css#L32 | click the button |
 | S5-R7 | no console warnings; README + AI log | https://github.com/Narcisss02/StayHealthy/blob/f2c3854b4b4b1f704f4c63e5c80612b6ebd0dda5/README.md?plain=1#L89-L99 | F12, Console |
 | S5-R8 | commit "Stage 5" pushed | https://github.com/Narcisss02/StayHealthy/commit/6086469402465c5182ebe32e7ca9fb422d10ac14 | commit history |
+
+## Custom Personalization (StayFit Theme) & Stage 7 Prep
+The application has been completely revamped to feature a premium fitness club design (inspired by StayFit). It now includes multi-page state navigation, dynamic motivational coaching, and advanced interactive UI components.
+
+**New Features Implemented:**
+- **State-based Navigation:** Seamless switching between *Antrenamente*, *Abonamente*, and *Exerciții* without page reloads.
+- **Dynamic Coach:** A motivational coach section that rotates quotes every 5 seconds using `useEffect` and `setInterval`.
+- **Advanced UI/UX:** Cascading Fade-In animations, premium dark/light mode toggle, hover effects (`transform` & `transition`), and expandable exercise cards.
+- **Session Tracking:** Added a progress bar (range slider) for each workout and a form to add new sessions dynamically to the local state.
+
+## Custom Stage Checklist
+| ID | Requirement | Where (permalink) | How to check |
+| --- | --- | --- | --- |
+| C-R1 | Multi-page navigation state | [App.jsx#L..](link) | Click tabs in the Navbar |
+| C-R2 | Add new session form | [App.jsx#L..](link) | Fill the form and click "Adaugă" |
+| C-R3 | Progress bar per session | [AntrenamentCard.jsx#L..](link) | Drag the slider, observe percentage |
+| C-R4 | Expandable exercise cards | [App.jsx#L..](link) | Click an exercise card to see details |
+| C-R5 | Rotating Coach quotes | [App.jsx#L..](link) | Wait 5 seconds to see the quote change |
+| C-R6 | Cascading entry animations | [App.css#L..](link) | Refresh or change pages to see elements slide in |
