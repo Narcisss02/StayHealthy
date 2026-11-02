@@ -1,0 +1,11 @@
+{
+  "antrenamente": [
+    { "id": 1, "titlu": "Leg day Workout", "finalizat": false, "dificultate": "intens", "progres": 0 },
+    { "id": 2, "titlu": "Chest Day", "finalizat": false, "dificultate": "mediu", "progres": 0 },
+    { "id": 3, "titlu": "Arm day", "finalizat": false, "dificultate": "intens", "progres": 0 },
+    { "id": 4, "titlu": "Back Day", "finalizat": false, "dificultate": "intens", "progres": 0 },
+    { "id": 5, "titlu": "Cardio 30 minute", "finalizat": false, "dificultate": "intens", "progres": 0 },
+    { "id": 6, "titlu": "Streching/Posture fix", "finalizat": false, "dificultate": "usor", "progres": 0 },
+    { "id": 7, "titlu": "Morning run 5 km", "finalizat": true, "dificultate": "mediu", "progres": 100 }
+  ]
+}

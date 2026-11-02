@@ -1,9 +1,8 @@
 import AntrenamentCard from "./AntrenamentCard.jsx";
 
-export default function AntrenamentList({ antrenamente, onToggle, onDelete }) {
-    
+export default function AntrenamentList({ antrenamente, onToggle, onDelete, onProgress }) {
     if (antrenamente.length === 0) {
-        return <p className="empty">Nu există niciun antrenament.</p>;
+        return <p className="empty">Nu există niciun antrenament planificat.</p>;
     }
 
     return (
@@ -14,6 +13,7 @@ export default function AntrenamentList({ antrenamente, onToggle, onDelete }) {
                     antrenament={antrenament} 
                     onToggle={onToggle}
                     onDelete={onDelete}
+                    onProgress={onProgress}
                 />
             ))}
         </ul>
