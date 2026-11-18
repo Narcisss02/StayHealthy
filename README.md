@@ -32,6 +32,7 @@ The application has been completely revamped to feature a premium fitness club d
 ```bash
 npm run api # terminal 1, http://localhost:3001
 npm run dev # terminal 2, http://localhost:5173
+```
 
 
 ## How to run
