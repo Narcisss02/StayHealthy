@@ -1,0 +1,50 @@
+.container { max-width: 1100px; margin: 32px auto; padding: 0 16px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+
+.card {
+  background: var(--card-alt);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.card:hover { transform: translateY(-5px); border-color: var(--accent); }
+.popular { border: 2px solid var(--accent); background: linear-gradient(180deg, rgba(153, 27, 27, 0.15) 0%, var(--card-alt) 100%); }
+
+.ribbon {
+  position: absolute;
+  top: -12px;
+  right: 16px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.card h3 { margin: 0 0 12px 0; font-size: 1.35rem; text-transform: uppercase; }
+.priceValue { margin-bottom: 20px; }
+.amount { font-size: 2rem; font-weight: 900; color: #ef4444; }
+.period { color: var(--muted); font-size: 0.9rem; }
+
+.benefits { list-style: none; padding: 0; margin: 0 0 24px 0; display: flex; flex-direction: column; gap: 10px; }
+
+.selectBtn {
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: 800;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.selectBtn:hover { background: var(--accent-hover); }

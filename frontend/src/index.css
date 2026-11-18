@@ -1,0 +1,190 @@
+/* Stiluri globale: variabile, elemente de bază, clase comune.
+   Stilurile specifice componentelor stau în fișiere *.module.css */
+
+* {
+  box-sizing: border-box;
+}
+
+/* Tema implicită (negru & roșu închis) */
+:root {
+  --bg: #18181b;
+  --card: #222227;
+  --card-alt: #2a2a32;
+  --text: #f4f4f6;
+  --muted: #a1a1aa;
+  --accent: #991b1b;
+  --accent-dark: #7f1d1d;
+  --accent-hover: #b91c1c;
+  --accent-soft: rgba(153, 27, 27, 0.18);
+  --border: #33333d;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  --radius: 12px;
+
+  /* Culori etichete dificultate */
+  --badge-usor: #15803d;
+  --badge-mediu: #b45309;
+  --badge-intens: #991b1b;
+  --color-intens: #dc2626;
+}
+
+/* Dacă utilizatorul comută explicit pe Light Mode */
+:root[data-theme="light"] {
+  --bg: #e4e4e7;
+  --card: #ffffff;
+  --card-alt: #f4f4f5;
+  --text: #111113;
+  --muted: #52525b;
+  --accent: #881313;
+  --accent-dark: #6b0f0f;
+  --accent-hover: #991b1b;
+  --accent-soft: #fee2e2;
+  --border: #d4d4d8;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Tema întunecată profundă (Dark / Beast Mode) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #09090b;
+    --card: #121216;
+    --card-alt: #1a1a20;
+    --text: #f4f4f5;
+    --muted: #9ca3af;
+    --border: #27272f;
+    --accent-soft: rgba(153, 27, 27, 0.25);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #09090b;
+  --card: #121216;
+  --card-alt: #1a1a20;
+  --text: #f4f4f5;
+  --muted: #9ca3af;
+  --border: #27272f;
+  --accent-soft: rgba(153, 27, 27, 0.25);
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--accent-hover);
+}
+
+:focus-visible {
+  outline: 2px solid #dc2626;
+  outline-offset: 2px;
+}
+
+/* PANOURI COMUNE */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.panel {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  animation: slideInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.panel h2 {
+  margin-top: 0;
+  font-size: 1.35rem;
+  letter-spacing: 0.5px;
+}
+
+/* MESAJE DE STARE */
+.info,
+.empty {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.error {
+  color: #fca5a5;
+  background: #450a0a;
+  border: 1px solid #dc2626;
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+/* BUTOANE COMUNE */
+.btn {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: var(--accent-hover);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-danger {
+  border: 1px solid #dc2626;
+  background: transparent;
+  color: #ef4444;
+  border-radius: 6px;
+  padding: 7px 14px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-danger:hover {
+  background: #991b1b;
+  border-color: #991b1b;
+  color: #ffffff;
+}
+
+/* BADGE-URI DIFICULTATE */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-usor {
+  background-color: var(--badge-usor);
+}
+
+.badge-mediu {
+  background-color: var(--badge-mediu);
+}
+
+.badge-intens {
+  background-color: var(--badge-intens);
+}

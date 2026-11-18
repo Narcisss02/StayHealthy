@@ -1,0 +1,93 @@
+.hero {
+  background: linear-gradient(135deg, #09090b 0%, #450a0a 60%, #7f1d1d 100%);
+  color: #ffffff;
+  text-align: center;
+  padding: 40px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.heroContent {
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heroTag {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #dc2626;
+  color: #fca5a5;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.hero h1 {
+  margin: 0 0 10px 0;
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.pulseIcon { display: inline-block; animation: pulse 2s infinite; }
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.7; }
+}
+
+.statsBar {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(220, 38, 38, 0.4);
+  border-radius: 12px;
+  padding: 16px 32px;
+  margin: 20px 0;
+}
+
+.statBlock { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 120px; }
+.statLabel { font-size: 0.75rem; font-weight: 700; color: var(--muted); letter-spacing: 1.5px; }
+.statValue { font-size: 2.2rem; font-weight: 900; line-height: 1; color: #fff; }
+.highlight { color: #ef4444; }
+.statDivider { width: 2px; height: 40px; background: rgba(255, 255, 255, 0.1); margin: 0 24px; }
+
+.coachMessage {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 12px;
+  padding: 18px 20px;
+  background: linear-gradient(145deg, rgba(20, 20, 25, 0.9), rgba(30, 15, 15, 0.95));
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  text-align: left;
+}
+
+.coachHeader {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.coachIcon { font-size: 1.2rem; }
+.coachQuoteContainer { min-height: 44px; display: flex; align-items: center; }
+.coachQuote { margin: 0; font-size: 1.1rem; font-weight: 600; font-style: italic; color: #e4e4e7; }
+
+.container { max-width: 1100px; margin: 32px auto; padding: 0 16px; }
+.grid { display: grid; grid-template-columns: 320px 1fr; gap: 24px; align-items: start; }
+
+@media (max-width: 800px) {
+  .grid { grid-template-columns: 1fr; }
+}

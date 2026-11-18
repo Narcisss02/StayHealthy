@@ -36,3 +36,7 @@ export function updateAntrenament(id, changes) {
 export function deleteAntrenament(id) {
   return request(`/antrenamente/${id}`, { method: "DELETE" });
 }
+
+export function fetchAntrenament(id) {
+  return request(`/antrenamente/${id}`);
+}
