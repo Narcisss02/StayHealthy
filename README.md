@@ -130,14 +130,14 @@ The application has been completely revamped to feature a premium fitness club d
 ## Stage 7 Checklist
 | ID | Requirement | Where (permalink) | How to check |
 | --- | --- | --- | --- |
-| S7-R1 | controlled form: value + onChange on every field | [TaskForm.jsx#L49-L65](https://github.com/Narcisss02/StayHealthy/blob/main/frontend/src/components/TaskForm.jsx#L49-L65) | read |
-| S7-R2 | empty title shows an error, nothing is sent | [TaskForm.jsx#L18-L23](https://github.com/Narcisss02/StayHealthy/blob/main/frontend/src/components/TaskForm.jsx#L18-L23) | submit empty, watch Network |
-| S7-R3 | added item shows in the list and survives refresh | [App.jsx#L106-L109](https://github.com/Narcisss02/StayHealthy/blob/main/frontend/src/App.jsx#L106-L109), [api.js#L21-L26](https://github.com/Narcisss02/StayHealthy/blob/main/frontend/src/api.js#L21-L26) | add, refresh |
-| S7-R4 | toggle and delete survive refresh | [App.jsx#L111-L139](https://github.com/Narcisss02/StayHealthy/blob/main/frontend/src/App.jsx#L111-L139) | toggle/delete, refresh |
-| S7-R5 | button disabled while sending, form cleared only on success | [TaskForm.jsx#L33-L44](https://github.com/Narcisss02/StayHealthy/blob/main/frontend/src/components/TaskForm.jsx#L33-L44) | --delay 3000; stop API and submit |
-| S7-R6 | tw.json and the data-testid attributes from table 7.3 | [tw.json](https://github.com/Narcisss02/StayHealthy/blob/main/tw.json), [AntrenamentCard.jsx#L1-L30](https://github.com/Narcisss02/StayHealthy/blob/main/frontend/src/components/AntrenamentCard.jsx#L1-L30) | querySelectorAll in the console |
-| S7-R7 | README Stage 7 section + AI log | [README.md](https://github.com/Narcisss02/StayHealthy/blob/main/README.md), [ai-log/etapa-07.md](https://github.com/Narcisss02/StayHealthy/blob/main/ai-log/etapa-07.md) | read |
-| S7-R8 | commit "Stage 7" pushed | [commits](https://github.com/Narcisss02/StayHealthy/commits/main) | commit history |
+| S7-R1 | controlled form: value + onChange on every field |https://github.com/Narcisss02/StayHealthy/blob/main/frontend/src/components/TaskForm.jsx#L49-L65 | read |
+| S7-R2 | empty title shows an error, nothing is sent | https://github.com/Narcisss02/StayHealthy/blob/main/frontend/src/components/TaskForm.jsx#L18-L23 | submit empty, watch Network |
+| S7-R3 | added item shows in the list and survives refresh | https://github.com/Narcisss02/StayHealthy/blob/main/frontend/src/App.jsx#L106-L109,https://github.com/Narcisss02/StayHealthy/blob/main/frontend/src/api.js#L21-L26 | add, refresh |
+| S7-R4 | toggle and delete survive refresh | https://github.com/Narcisss02/StayHealthy/blob/main/frontend/src/App.jsx#L111-L139 | toggle/delete, refresh |
+| S7-R5 | button disabled while sending, form cleared only on success | https://github.com/Narcisss02/StayHealthy/blob/main/frontend/src/components/TaskForm.jsx#L33-L44 | --delay 3000; stop API and submit |
+| S7-R6 | tw.json and the data-testid attributes from table 7.3 | https://github.com/Narcisss02/StayHealthy/blob/main/tw.json, https://github.com/Narcisss02/StayHealthy/blob/main/frontend/src/components/AntrenamentCard.jsx#L1-L30 | querySelectorAll in the console |
+| S7-R7 | README Stage 7 section + AI log | https://github.com/Narcisss02/StayHealthy/blob/main/README.md, https://github.com/Narcisss02/StayHealthy/blob/main/ai-log/etapa-07.md | read |
+| S7-R8 | commit "Stage 7" pushed | https://github.com/Narcisss02/StayHealthy/commits/main | commit history |
 
 ## Stage 8 Checklist
 | ID | Requirement | Where (permalink) | How to check |
