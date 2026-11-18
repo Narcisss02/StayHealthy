@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import AntrenamentList from "./components/AntrenamentList.jsx";
-import { fetchAntrenamente } from "./api.js";
+import { createAntrenament, deleteAntrenament, fetchAntrenamente, updateAntrenament } from "./api.js";
 
 const GALERIE_EXERCITII = [
     {
@@ -35,8 +35,7 @@ const GALERIE_EXERCITII = [
     },
     {
         id: 6, titlu: "Presă Militară (Overhead Press)", grupa: "Umeri",
-        // Am schimbat imaginea spartă cu una funcțională de forță (kettlebell press/shoulder workout)
-        imagine: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=600&q=80", 
+        imagine: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=600&q=80",
         descriere: "Construiește umeri masivi și forță de împingere.",
         detalii: "Strânge fesierii și abdomenul pentru a stabiliza coloana."
     }
@@ -48,7 +47,6 @@ const ABONAMENTE = [
     { id: "vip-pro", nume: "Beast VIP", pret: "290 RON", perioada: "/ lună", beneficii: ["Acces 24/7 + invitat", "Plan nutrițional", "Saună inclusă"] }
 ];
 
-// Mesaje motivaționale dinamice
 const COACH_QUOTES = [
     "Nu te opri când ești obosit, oprește-te când ai terminat!",
     "Disciplina bate motivația în fiecare zi.",
@@ -79,6 +77,9 @@ function ExercitiuCard({ ex }) {
     );
 }
 
+// ADĂUGĂM IMPORTUL PENTRU FORMULARUL EXTRAS LA PASUL 7.2
+import TaskForm from "./components/TaskForm.jsx";
+
 export default function App() {
     const [antrenamente, setAntrenamente] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -86,13 +87,11 @@ export default function App() {
     const [tema, setTema] = useState("dark");
     const [pagina, setPagina] = useState("acasa");
     const [abonamentSelectat, setAbonamentSelectat] = useState("StayHealthy FULL");
-    const [titluNou, setTitluNou] = useState("");
-    const [dificultateNoua, setDificultateNoua] = useState("mediu");
     
-    // State pentru citatul curent al coach-ului
+    // ATENȚIE: State-urile titluNou și dificultateNoua s-au mutat în TaskForm.jsx, deci le-am șters de aici.
+    
     const [quoteIndex, setQuoteIndex] = useState(0);
 
-    // Efect pentru fetch-ul datelor
     useEffect(() => {
         let ignore = false;
         async function load() {
@@ -109,7 +108,6 @@ export default function App() {
         return () => { ignore = true; };
     }, []);
 
-    // Efect pentru rotația mesajelor motivaționale o dată la 5 secunde
     useEffect(() => {
         const interval = setInterval(() => {
             setQuoteIndex((prev) => (prev + 1) % COACH_QUOTES.length);
@@ -117,37 +115,41 @@ export default function App() {
         return () => clearInterval(interval);
     }, []);
 
-    function handleToggle(id) {
-        setAntrenamente((prev) =>
-            prev.map((a) => (a.id === id ? { ...a, finalizat: !a.finalizat, progres: !a.finalizat ? 100 : 0 } : a))
-        );
+    // AICI SUNT FUNCȚIILE ACTUALIZATE (PASUL 7.3)
+    async function handleAdd(antrenamentNou) {
+        const creat = await createAntrenament(antrenamentNou);
+        setAntrenamente((prev) => [...prev, creat]);
     }
 
-    function handleDelete(id) {
-        setAntrenamente((prev) => prev.filter((a) => a.id !== id));
+    async function handleToggle(id) {
+        const antrenament = antrenamente.find((a) => a.id === id);
+        try {
+            const finalizatNou = !antrenament.finalizat;
+            const progresNou = finalizatNou ? 100 : 0;
+            const actualizat = await updateAntrenament(id, { finalizat: finalizatNou, progres: progresNou });
+            setAntrenamente((prev) => prev.map((a) => (a.id === id ? actualizat : a)));
+        } catch (err) {
+            setError(err.message);
+        }
     }
 
-    function handleProgress(id, valoare) {
+    async function handleProgress(id, valoare) {
         const progresNum = Number(valoare);
-        setAntrenamente((prev) =>
-            prev.map((a) =>
-                a.id === id ? { ...a, progres: progresNum, finalizat: progresNum === 100 } : a
-            )
-        );
+        try {
+            const actualizat = await updateAntrenament(id, { progres: progresNum, finalizat: progresNum === 100 });
+            setAntrenamente((prev) => prev.map((a) => (a.id === id ? actualizat : a)));
+        } catch (err) {
+            setError(err.message);
+        }
     }
 
-    function handleAdd(e) {
-        e.preventDefault();
-        if (!titluNou.trim()) return;
-        const antrenamentNou = {
-            id: Date.now(),
-            titlu: titluNou,
-            dificultate: dificultateNoua,
-            finalizat: false,
-            progres: 0
-        };
-        setAntrenamente([...antrenamente, antrenamentNou]);
-        setTitluNou("");
+    async function handleDelete(id) {
+        try {
+            await deleteAntrenament(id);
+            setAntrenamente((prev) => prev.filter((a) => a.id !== id));
+        } catch (err) {
+            setError(err.message);
+        }
     }
 
     function handleTema() {
@@ -186,7 +188,6 @@ export default function App() {
                     <span className="hero-tag"><span className="pulse-icon">⚡</span> STAY FIT, STAY HEALTHY</span>
                     <h1>DEPĂȘEȘTE-ȚI LIMITELE</h1>
                     
-                    {/* Design premium pentru bară statistici */}
                     <div className="premium-stats-bar">
                         <div className="stat-block">
                             <span className="stat-label">TOTAL SESIUNI</span>
@@ -199,7 +200,6 @@ export default function App() {
                         </div>
                     </div>
 
-                    {/* Coach motivațional animat */}
                     <div className="coach-message animated-box">
                         <div className="coach-header">
                             <span className="coach-icon">🏋️</span> <strong>STATUS: {progressStatus}</strong>
@@ -216,28 +216,15 @@ export default function App() {
                     <div className="layout-grid">
                         <section className="panel side-panel">
                             <h2>ADAUGĂ SESIUNE</h2>
-                            <form className="add-form" onSubmit={handleAdd}>
-                                <input 
-                                    type="text" 
-                                    placeholder="Nume ex. Chest Day..." 
-                                    value={titluNou}
-                                    onChange={(e) => setTitluNou(e.target.value)}
-                                    required
-                                />
-                                <select value={dificultateNoua} onChange={(e) => setDificultateNoua(e.target.value)}>
-                                    <option value="usor">Ușor (Recovery)</option>
-                                    <option value="mediu">Mediu (Hipertrofie)</option>
-                                    <option value="intens">Intens (Forță / Beast)</option>
-                                </select>
-                                <button type="submit" className="btn-submit">➕ Adaugă la Plan</button>
-                            </form>
+                            {/* AICI ESTE FOLOSIT NOUL FORMULAR EXTRAS LA PASUL 7.2 */}
+                            <TaskForm onAdd={handleAdd} />
                         </section>
 
                         <section className="panel main-panel">
                             <h2>PLANUL DE AZI</h2>
-                            {loading && <p className="info">Se încarcă antrenamentele...</p>}
-                            {error && <p className="error">Eroare API: {error}</p>}
-                            {!loading && !error && (
+                            {loading && <p className="info" data-testid="loading">Se încarcă antrenamentele...</p>}
+                            {error && <p className="error" data-testid="error">Eroare API: {error}</p>}
+                            {!loading && (
                                 <AntrenamentList
                                     antrenamente={antrenamente}
                                     onToggle={handleToggle}

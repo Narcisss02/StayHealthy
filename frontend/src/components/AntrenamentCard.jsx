@@ -1,40 +1,45 @@
-const ETICHETE_DIFICULTATE = { usor: "Ușor", mediu: "Mediu", intens: "Intens" };
-
 export default function AntrenamentCard({ antrenament, onToggle, onDelete, onProgress }) {
     return (
-        <li className={antrenament.finalizat ? "item-card done" : "item-card"}>
-            <div className="card-top">
-                <label className="task-main">
-                    <input
-                        type="checkbox"
-                        checked={antrenament.finalizat}
-                        onChange={() => onToggle(antrenament.id)}
-                    />
-                    <div>
-                        <h3>{antrenament.titlu}</h3>
-                        <span className={`badge badge-${antrenament.dificultate}`}>
-                            {ETICHETE_DIFICULTATE[antrenament.dificultate]}
-                        </span>
-                    </div>
-                </label>
-                <button className="btn-danger" onClick={() => onDelete(antrenament.id)}>
+        <div 
+            className={`item-card ${antrenament.finalizat ? "done" : ""}`}
+            data-testid="item" 
+            data-id={antrenament.id}
+        >
+            <div className="item-header">
+                <input
+                    type="checkbox"
+                    checked={antrenament.finalizat}
+                    onChange={() => onToggle(antrenament.id)}
+                    data-testid="item-toggle"
+                />
+                
+                <div className="item-info">
+                    <h3 data-testid="item-title">{antrenament.titlu}</h3>
+                    <span className={`badge badge-${antrenament.dificultate}`}>
+                        {antrenament.dificultate}
+                    </span>
+                </div>
+
+                <button
+                    className="btn-danger"
+                    onClick={() => onDelete(antrenament.id)}
+                    data-testid="item-delete"
+                >
                     Șterge
                 </button>
             </div>
-            
-            {/* Bara de progres */}
+
             <div className="progress-container">
-                <span className="progress-label">Progres sesiune:</span>
                 <input 
                     type="range" 
                     min="0" 
                     max="100" 
-                    value={antrenament.progres || 0} 
+                    value={antrenament.progres || 0}
                     onChange={(e) => onProgress(antrenament.id, e.target.value)}
-                    className="progress-slider"
+                    disabled={antrenament.finalizat}
                 />
-                <span className="progress-percent">{antrenament.progres || 0}%</span>
+                <span className="progress-text">{antrenament.progres || 0}%</span>
             </div>
-        </li>
+        </div>
     );
 }

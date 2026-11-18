@@ -125,3 +125,25 @@ The application has been completely revamped to feature a premium fitness club d
 | S6-R5 | fetch only in api.js, URL from env | https://github.com/Narcisss02/StayHealthy/blob/cfc0a4e1daf534b62c45c8421b30c7812493895b/frontend/src/api.js#L4-L10 | search for fetch |
 | S6-R6 | README Stage 6 section + AI log | https://github.com/Narcisss02/StayHealthy/blob/cfc0a4e1daf534b62c45c8421b30c7812493895b/README.md?plain=1#L109-L126| read |
 | S6-R7 | commit "Stage 6" pushed | https://github.com/Narcisss02/StayHealthy/commit/81b7f296f5a3e27f291ab425ace4408df8e72193 | commit history |
+
+## Stage 7 Checklist
+| ID | Requirement | Where (permalink) | How to check |
+| --- | --- | --- | --- |
+| S7-R1 | controlled form: value + onChange on every field | `src/components/TaskForm.jsx#L49-L65` | read |
+| S7-R2 | empty title shows an error, nothing is sent | `src/components/TaskForm.jsx#L18-L23` | submit empty, watch Network |
+| S7-R3 | added item shows in the list and survives refresh | `src/pages/TaskuriPage.jsx#L34-L37` | add, refresh |
+| S7-R4 | toggle and delete survive refresh | `src/pages/TaskuriPage.jsx#L39-L55` | toggle/delete, refresh |
+| S7-R5 | button disabled while sending, form cleared only on success | `src/components/TaskForm.jsx#L36-L44` | --delay 3000; stop API and submit |
+| S7-R6 | tw.json and the data-testid attributes | `tw.json`, `src/components/AntrenamentCard.jsx#L15-L25` | querySelectorAll in the console |
+| S7-R7 | README Stage 7 section + AI log | `README.md`, `ai-log/etapa-07.md` | read |
+
+## Stage 8 Checklist
+| ID | Requirement | Where (permalink) | How to check |
+| --- | --- | --- | --- |
+| S8-R1 | header navigation changes page without reload | `src/App.jsx`, `src/components/Layout.jsx#L26-L27` | click links, watch Network |
+| S8-R2 | click on an item opens its detail page | `src/components/AntrenamentCard.jsx#L18`, `src/pages/TaskDetaliuPage.jsx` | click a title |
+| S8-R3 | refresh on the detail URL works; missing id shows an error | `src/pages/TaskDetaliuPage.jsx#L13-L21` | refresh /antrenamente/1, open /999 |
+| S8-R4 | unknown URL shows the app 404 page | `src/App.jsx#L15`, `src/pages/NotFoundPage.jsx` | open /ceva |
+| S8-R5 | each component has its .module.css | `src/components`, `src/pages`, `index.css` | read |
+| S8-R6 | data-testid attributes; detail route /<resource>/:id | `src/components/Layout.jsx`, `src/pages/TaskDetaliuPage.jsx` | querySelector in the console |
+| S8-R7 | README Stage 8 section + AI log | `README.md`, `ai-log/etapa-08.md` | read |
