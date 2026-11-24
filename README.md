@@ -28,19 +28,16 @@ Details per stage:
 * **Stage 5:** Discussed managing local state with `useState`, passing callback functions as props for inverse data flow, and dynamically toggling the global theme.
 * **Stage 6:** (Custom): Premium UI, State Navigation & Form Prep
 The application has been completely revamped to feature a premium fitness club design (StayFit theme). It now includes multi-page state navigation, dynamic motivational coaching, and advanced interactive UI components (hover animations, cascading page transitions). Form prep is included for adding sessions and tracking progress locally.
-## Stage 9: own backend
+* **Stage 7:** Used Gemini to implement the controlled form (`TaskForm.jsx`) with validation, extend `api.js` with `POST`, `PATCH`, and `DELETE` requests via a shared `request` wrapper, and add `tw.json` plus `data-testid` attributes for automated testing.
+* **Stage 8:** Discussed setting up `react-router-dom` with a shared `Layout` (`NavLink` and `Outlet`), creating the detail page (`/antrenamente/:id`) using `useParams`, adding the 404 page, and migrating component styles into dedicated `.module.css` files.
+* **Stage 9:** own backend
 json-server is gone. The API is an Express server in `backend/`, with REST routes, server-side validation and CORS. Data is still kept in memory and resets on restart.
 
 ## How to run
 ```bash
 cd backend && npm install && npm run dev   # terminal 1, port 3001
 cd frontend && npm install && npm run dev  # terminal 2, port 5173
-
-
-
-## How to run
-Open `index.html` in a browser. No build step, no server.
-For Stage 2, press F12 to open the Developer Tools and view the logic tests in the Console.
+```
 
 ## Status
 - [x] Stage 1: static mockup
@@ -49,6 +46,9 @@ For Stage 2, press F12 to open the Developer Tools and view the logic tests in t
 - [x] Stage 4: components rendered from data
 - [x] Stage 5: local state and events
 - [x] Stage 6: loading data from a mock API
+- [x] Stage 7: form and validation
+- [x] Stage 8: routing and detail page
+- [x] Stage 9: own backend with Express
 
 ## Stage 1 Checklist (To be filled after git push)
 | ID | Requirement | Where (permalink) | How to check |
@@ -153,3 +153,14 @@ The application has been completely revamped to feature a premium fitness club d
 | S8-R6 | data-testid attributes from tables 7.3 and 8.2; detail route /antrenamente/:id | https://github.com/Narcisss02/StayHealthy/blob/68129d404bb4ecaebee93e7382ddca730b4275dc/frontend/src/components/Layout.jsx , https://github.com/Narcisss02/StayHealthy/blob/68129d404bb4ecaebee93e7382ddca730b4275dc/frontend/src/components/AntrenamentCard.jsx , https://github.com/Narcisss02/StayHealthy/blob/68129d404bb4ecaebee93e7382ddca730b4275dc/frontend/src/pages/AntrenamentDetaliuPage.jsx , https://github.com/Narcisss02/StayHealthy/blob/68129d404bb4ecaebee93e7382ddca730b4275dc/frontend/src/pages/NotFoundPage.jsx | querySelector in the console |
 | S8-R7 | README Stage 8 section + AI log | https://github.com/Narcisss02/StayHealthy/blob/68129d404bb4ecaebee93e7382ddca730b4275dc/README.md , https://github.com/Narcisss02/StayHealthy/blob/68129d404bb4ecaebee93e7382ddca730b4275dc/ai-log/etapa-08.md | read |
 | S8-R8 | commit "Stage 8" pushed | https://github.com/Narcisss02/StayHealthy/commit/68129d404bb4ecaebee93e7382ddca730b4275dc | commit history |
+
+## Stage 9 Checklist
+| ID | Requirement | Where (permalink) | How to check |
+| --- | --- | --- | --- |
+| S9-R1 | npm run dev in backend/ starts the API on 3001 | https://github.com/Narcisss02/StayHealthy/blob/19b338d9d257af0ad7649d4f792da0f652dfb202/backend/package.json , https://github.com/Narcisss02/StayHealthy/blob/19b338d9d257af0ad7649d4f792da0f652dfb202/backend/src/server.js | run it, open /health |
+| S9-R2 | all five routes answer with the right codes | https://github.com/Narcisss02/StayHealthy/blob/19b338d9d257af0ad7649d4f792da0f652dfb202/backend/src/routes/antrenamente.js#L26-L67 | curl commands from README |
+| S9-R3 | invalid data returns 400 with a clear message | https://github.com/Narcisss02/StayHealthy/blob/19b338d9d257af0ad7649d4f792da0f652dfb202/backend/src/validation.js#L5-L49 | POST with empty title |
+| S9-R4 | React app works with json-server removed | https://github.com/Narcisss02/StayHealthy/blob/19b338d9d257af0ad7649d4f792da0f652dfb202/frontend/package.json , https://github.com/Narcisss02/StayHealthy/blob/19b338d9d257af0ad7649d4f792da0f652dfb202/frontend/src/api.js#L9-L12 | stop everything but backend |
+| S9-R5 | no CORS errors in the browser console | https://github.com/Narcisss02/StayHealthy/blob/19b338d9d257af0ad7649d4f792da0f652dfb202/backend/src/app.js#L7 | open console |
+| S9-R6 | README Stage 9 section + AI log | https://github.com/Narcisss02/StayHealthy/blob/19b338d9d257af0ad7649d4f792da0f652dfb202/README.md , https://github.com/Narcisss02/StayHealthy/blob/19b338d9d257af0ad7649d4f792da0f652dfb202/ai-log/etapa-09.md | read |
+| S9-R7 | commit "Stage 9" pushed | https://github.com/Narcisss02/StayHealthy/commit/19b338d9d257af0ad7649d4f792da0f652dfb202 | commit history |
