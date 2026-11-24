@@ -28,11 +28,14 @@ Details per stage:
 * **Stage 5:** Discussed managing local state with `useState`, passing callback functions as props for inverse data flow, and dynamically toggling the global theme.
 * **Stage 6:** (Custom): Premium UI, State Navigation & Form Prep
 The application has been completely revamped to feature a premium fitness club design (StayFit theme). It now includes multi-page state navigation, dynamic motivational coaching, and advanced interactive UI components (hover animations, cascading page transitions). Form prep is included for adding sessions and tracking progress locally.
+## Stage 9: own backend
+json-server is gone. The API is an Express server in `backend/`, with REST routes, server-side validation and CORS. Data is still kept in memory and resets on restart.
 
+## How to run
 ```bash
-npm run api # terminal 1, http://localhost:3001
-npm run dev # terminal 2, http://localhost:5173
-```
+cd backend && npm install && npm run dev   # terminal 1, port 3001
+cd frontend && npm install && npm run dev  # terminal 2, port 5173
+
 
 
 ## How to run
